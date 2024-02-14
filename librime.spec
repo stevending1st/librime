@@ -8,22 +8,22 @@ URL:            https://github.com/rime/%{name}
 Source0:        https://github.com/rime/%{name}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires:  gcc >= 8.1
-                cmake >= 3.12
-                libboost >= 1.74
-                libglog
-                libleveldb
-                libmarisa
-                libopencc >= 1.0.2
-                libyaml-cpp >= 0.5
-                libgtest
+BuildRequires:  cmake >= 3.12
+BuildRequires:  libboost >= 1.74
+BuildRequires:  libglog
+BuildRequires:  libleveldb
+BuildRequires:  libmarisa
+BuildRequires:  libopencc >= 1.0.2
+BuildRequires:  libyaml-cpp >= 0.5
+BuildRequires:  libgtest
 
 Requires:  gcc >= 8.1
-           libboost
-           libglog
-           libleveldb
-           libmarisa
-           libopencc
-           libyaml-cpp
+Requires:  libboost
+Requires:  libglog
+Requires:  libleveldb
+Requires:  libmarisa
+Requires:  libopencc
+Requires:  libyaml-cpp
 
 %description
 Rime with your keystrokes.
@@ -35,10 +35,13 @@ Rime with your keystrokes.
 make
 
 %install
-%make_install
+mkdir -p %{buildroot}%{_bindir}
+make install BINDIR=%{buildroot}%{_bindir} MANDIR=%{buildroot}%{_mandir}
 
 %files
-/
+%{_bindir}/%{name}
+%{_mandir}/man1/%{name}.1.gz
+%license COPYING
 
 %changelog
 * Tue Feb. 9th 2024 居戎氏 <chen.sst@gmail.com> - 1.10.0
