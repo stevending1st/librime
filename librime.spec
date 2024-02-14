@@ -17,6 +17,7 @@ BuildRequires:  libopencc >= 1.0.2
 BuildRequires:  libyaml-cpp >= 0.5
 BuildRequires:  libgtest
 
+Requires:  gcc >= 8.1
 Requires:  libboost
 Requires:  libglog
 Requires:  libleveldb
@@ -28,17 +29,16 @@ Requires:  libyaml-cpp
 Rime with your keystrokes.
 
 %prep
-%setup -q
+%autosetup
 
 %build
-make %{?_smp_mflags}
+make
 
 %install
 %make_install
 
 %files
-%license LICENSE
-%{_bindir}/%{name}
+/
 
 %changelog
 * Tue Feb. 9th 2024 居戎氏 <chen.sst@gmail.com> - 1.10.0
