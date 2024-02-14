@@ -30,18 +30,17 @@ Rime with your keystrokes.
 
 %prep
 %autosetup
+ls;
 
 %build
-make
+ls; make
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 make install BINDIR=%{buildroot}%{_bindir} MANDIR=%{buildroot}%{_mandir}
 
 %files
-%{_bindir}/%{name}
-%{_mandir}/man1/%{name}.1.gz
-%license COPYING
+/
 
 %changelog
 * Tue Feb. 9th 2024 居戎氏 <chen.sst@gmail.com> - 1.10.0
