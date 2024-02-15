@@ -5,7 +5,7 @@ Summary:        Rime Input Method Engine, the core library
 
 License:        The 3-Clause BSD License
 URL:            https://github.com/rime/%{name}
-Source0:        https://github.com/rime/%{name}/archive/refs/tags/%{version}.tar.gz
+Source0:        https://github.com/rime/librime/archive/refs/tags/1.10.0.tar.gz
 
 BuildRequires:  gcc >= 8.1
 BuildRequires:  cmake >= 3.12
@@ -30,10 +30,9 @@ Rime with your keystrokes.
 
 %prep
 %autosetup
-ls;
 
 %build
-ls; make
+make
 
 %install
 mkdir -p %{buildroot}%{_bindir}
